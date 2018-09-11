@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Mobile Store</string>
+    <string name="required_info">Insert All Required Information</string>
+    <string name="inserted_successfully">Inserted succesfully at :</string>
+    <string name="insert_fail">Not Inserted</string>
 </resources>
