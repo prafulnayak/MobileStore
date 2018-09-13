@@ -1,7 +1,9 @@
 package org.sairaa.mobilestor;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +30,14 @@ public class EditorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
+
+        Intent intent = getIntent();
+        Uri currentUri = intent.getData();
+        if(currentUri == null){
+            setTitle("Add Stock");
+        }else{
+            setTitle("Edit Details");
+        }
         productName = findViewById(R.id.product_name);
         productPrice = findViewById(R.id.price);
         productQuantity = findViewById(R.id.quantity);
@@ -67,13 +77,13 @@ public class EditorActivity extends AppCompatActivity {
             values.put(MobileEntry.COULMN_PRODUCT_SUPPLIER_NAME,supplierName.getText().toString().trim());
             values.put(MobileEntry.COULMN_PRODUCT_SUPPLIER_PHONE_NO,supplierPhoneNo.getText().toString().trim());
 
-            long newRowId = db.insert(MobileEntry.TABLE_NAME,null,values);
-            if(newRowId == -1){
+            Uri uri = getContentResolver().insert(MobileEntry.CONTENT_URI,values);
+            if(uri == null){
                 Toast.makeText(EditorActivity.this,getString(R.string.insert_fail),Toast.LENGTH_SHORT).show();
             }else
-                Toast.makeText(EditorActivity.this,getString(R.string.inserted_successfully)+newRowId,Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditorActivity.this,getString(R.string.inserted_successfully)+uri,Toast.LENGTH_SHORT).show();
 
-            Log.v("MainActivity","new Row Id: "+newRowId);
+            Log.v("MainActivity","new Row Id: "+uri);
 
         }else {
             Toast.makeText(EditorActivity.this,getString(R.string.required_info),Toast.LENGTH_SHORT).show();

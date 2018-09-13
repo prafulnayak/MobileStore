@@ -20,6 +20,10 @@
             android:parentActivityName=".MainActivity">
 
         </activity>
+        <provider
+            android:authorities="org.sairaa.mobilestor"
+            android:name=".data.MobileProvider"
+            android:exported="false"/>
     </application>
 
 </manifest>
