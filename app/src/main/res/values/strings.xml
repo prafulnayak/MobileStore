@@ -7,4 +7,24 @@
 
     <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
     <string name="empty_view_subtitle_text">Get started by adding a mobile stock</string>
+    <string name="action_delete_all_entries">Delete All</string>
+    <string name="action_delete_single_entries">Delete Single</string>
+    <string name="unsaved_changes_dialog_msg">Are You Sure To Delete This ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete_all_entries">Do you really want to delete all entries</string>
+    <string name="deleted_success">Deleted Successfully</string>
+    <string name="delete_unsuccessful">Not Deleted Yet</string>
+    <string name="stock_negative">Stock Cannot Be Negative</string>
+    <string name="edit_success">Successfully Edited</string>
+    <string name="edit_failed">Edit Failed</string>
+    <string name="search_instructions">search by product</string>
+    <string name="search">Search</string>
+    <string name="no_results">No Product Found</string>
+    <string name="ten_digit">Mobile No should be 10 digit</string>
+    <string name="add_stock">Add Stock</string>
+    <string name="edit_stock">Edit Details</string>
+    <string name="zero">0</string>
+    <string name="in_stock">In Stock :</string>
+    <string name="rs">Rs.</string>
 </resources>

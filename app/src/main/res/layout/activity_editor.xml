@@ -13,6 +13,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Product name"
+        style="@style/editTextStyle"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +26,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Price For Each Product"
+        style="@style/editTextStyle"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -33,14 +35,17 @@
 
     <EditText
         android:id="@+id/quantity"
-        android:layout_width="wrap_content"
+        android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Quantity"
-        android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="number"
+        style="@style/editTextStyle"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/stock_up"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/stock_down"
         app:layout_constraintTop_toBottomOf="@+id/price" />
 
     <EditText
@@ -50,6 +55,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Supplier Name"
+        style="@style/editTextStyle"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +68,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        style="@style/editTextStyle"
         android:ems="10"
         android:hint="Supplier Phone Number"
         android:inputType="number"
@@ -75,6 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Save"
+        style="@style/editTextStyle"
         app:layout_constraintEnd_toStartOf="@+id/cancel"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,11 +92,47 @@
         android:id="@+id/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/editTextStyle"
         android:layout_marginTop="8dp"
         android:text="Cancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/save"
         app:layout_constraintTop_toBottomOf="@+id/supplier_phone_no" />
+
+    <Button
+        android:id="@+id/stock_down"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/quantity"
+        app:layout_constraintEnd_toStartOf="@+id/quantity"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/stock_up"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="25sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/quantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/quantity" />
+
+    <Button
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Call For Order"
+        style="@style/editTextStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cancel" />
 
 </android.support.constraint.ConstraintLayout>

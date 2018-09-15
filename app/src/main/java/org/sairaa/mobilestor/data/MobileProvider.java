@@ -163,7 +163,7 @@ public class MobileProvider extends ContentProvider {
     private int updateMobileInfo(Uri uri, ContentValues contentValues, String selection, String[] selectionArgs) {
         if(contentValues.containsKey(MobileEntry.COULMN_PRODUCT_NAME)){
             String name = contentValues.getAsString(MobileEntry.COULMN_PRODUCT_NAME);
-            if (name == null) {
+            if (name.isEmpty()) {
                 throw new IllegalArgumentException("Products requires a name");
             }
         }
@@ -183,7 +183,7 @@ public class MobileProvider extends ContentProvider {
         }
         if(contentValues.containsKey(MobileEntry.COULMN_PRODUCT_SUPPLIER_NAME)){
             String sName = contentValues.getAsString(MobileEntry.COULMN_PRODUCT_SUPPLIER_NAME);
-            if (sName == null) {
+            if (sName.isEmpty()) {
                 throw new IllegalArgumentException("Supplier requires a name");
             }
         }
